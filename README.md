@@ -1,6 +1,6 @@
 # Check-DQL
 
--- 1. Afficher les employés masculins dont le salaire net (salaire + commission) est supérieur ou égal à 8000, triés par ancienneté décroissante.
+## 1. Afficher les employés masculins dont le salaire net (salaire + commission) est supérieur ou égal à 8000, triés par ancienneté décroissante.
 -- La table résultante doit inclure : Numéro d'employé, Prénom et Nom, Âge et Ancienneté.
 ```
 SELECT
@@ -17,7 +17,7 @@ ORDER BY
     HIRE_DATE ASC;
 ```
 
--- 2. Afficher les produits répondant aux critères suivants :
+## 2. Afficher les produits répondant aux critères suivants :
 -- (C1) la quantité est emballée en bouteille(s),
 -- (C2) le troisième caractère du nom du produit est 't' ou 'T',
 -- (C3) fournis par les fournisseurs 1, 2 ou 3,
@@ -41,7 +41,7 @@ WHERE
     AND UNITS_ON_ORDER IS NOT NULL;
 ```
 
--- 3. Afficher les clients qui résident dans la même région que le fournisseur 1,
+## 3. Afficher les clients qui résident dans la même région que le fournisseur 1,
 -- c'est-à-dire qu'ils partagent le même pays, la même ville et les trois derniers chiffres du code postal.
 -- La requête doit utiliser une seule sous-requête.
 -- La table résultante doit inclure toutes les colonnes de la table CUSTOMERS.
@@ -63,7 +63,7 @@ WHERE
     );
 ```
 
--- 4. Pour chaque numéro de commande entre 10998 et 11003, faire ce qui suit :
+## 4. Pour chaque numéro de commande entre 10998 et 11003, faire ce qui suit :
 -- - Afficher le nouveau taux de remise, qui doit être de 0 % si le montant total de la commande avant remise (prix unitaire * quantité) est compris entre 0 et 2000,
 --   5 % si entre 2001 et 10000, 10 % si entre 10001 et 40000, 15 % si entre 40001 et 80000, et 20 % autrement.
 -- - Afficher le message "appliquer ancien taux de remise" si le numéro de commande est compris entre 10000 et 10999, et "appliquer nouveau taux de remise" autrement.
@@ -90,7 +90,7 @@ WHERE
     o.ORDER_int BETWEEN 10998 AND 11003;
 ```
 
--- 5. Afficher les fournisseurs de produits de boisson.
+## 5. Afficher les fournisseurs de produits de boisson.
 -- La table résultante doit afficher les colonnes : numéro de fournisseur, entreprise, adresse et numéro de téléphone.
 ```
 SELECT DISTINCT
@@ -108,7 +108,7 @@ WHERE
     c.CATEGORY_NAME = 'Beverages';
 ```
 
--- 6. Afficher les clients de Berlin qui ont commandé au plus 1 (0 ou 1) produit de dessert.
+## 6. Afficher les clients de Berlin qui ont commandé au plus 1 (0 ou 1) produit de dessert.
 -- La table résultante doit afficher la colonne : code client.
 ```
 SELECT
@@ -158,7 +158,7 @@ WHERE
     );
 ```
 
--- 7. Afficher les clients qui résident en France et le montant total des commandes qu'ils ont passées chaque lundi en avril 1998
+## 7. Afficher les clients qui résident en France et le montant total des commandes qu'ils ont passées chaque lundi en avril 1998
 -- (en considérant les clients qui n'ont pas encore passé de commande).
 -- La table résultante doit afficher les colonnes : numéro de client, nom de l'entreprise, numéro de téléphone, montant total et pays.
 ```
@@ -186,7 +186,7 @@ ORDER BY
     C.CUSTOMER_CODE;
 ```
 
--- 8. Afficher les clients qui ont commandé tous les produits.
+## 8. Afficher les clients qui ont commandé tous les produits.
 -- La table résultante doit afficher les colonnes : code client, nom de l'entreprise et numéro de téléphone.
 ```
 SELECT
@@ -205,7 +205,7 @@ HAVING
     COUNT(DISTINCT OD.PRODUCT_REF) = (SELECT COUNT(DISTINCT PRODUCT_REF) FROM PRODUCTS);
 ```
 
--- 9. Afficher pour chaque client de France le nombre de commandes qu'il a passées.
+## 9. Afficher pour chaque client de France le nombre de commandes qu'il a passées.
 -- La table résultante doit afficher les colonnes : code client et nombre de commandes.
 ```
 SELECT
@@ -223,7 +223,7 @@ ORDER BY
     C.CUSTOMER_CODE;
 ```
 
--- 10. Afficher le nombre de commandes passées en 1996, le nombre de commandes passées en 1997 et la différence entre ces deux nombres.
+## 10. Afficher le nombre de commandes passées en 1996, le nombre de commandes passées en 1997 et la différence entre ces deux nombres.
 -- La table résultante doit afficher les colonnes : commandes en 1996, commandes en 1997 et Différence.
 ```
 SELECT
